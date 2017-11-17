@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "objet_mutables_ou_non", "objet_mutables_ou_non.pyproj", "{779B40DA-C7AA-4842-98A3-1E517BDBC86B}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "booleens", "..\booleens\booleens.pyproj", "{11E3A1BC-91CA-4AEF-98FF-09DAD6D7632C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{779B40DA-C7AA-4842-98A3-1E517BDBC86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{779B40DA-C7AA-4842-98A3-1E517BDBC86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11E3A1BC-91CA-4AEF-98FF-09DAD6D7632C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11E3A1BC-91CA-4AEF-98FF-09DAD6D7632C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
