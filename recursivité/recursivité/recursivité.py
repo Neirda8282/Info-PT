@@ -59,21 +59,87 @@ def beppo(p,x,y):
     y=x*y 
     return beppo(p[:-1],x,y)  #recursivité 
 
-p=[1,3,-7,2]
-y=0
-x=7
-print(beppo(p,x,y))
+#p=[1,3,-7,2]
+#y=0
+#x=7
+#print(beppo(p,x,y))
 
 
 
-X=linspace(0,200,201)
-Y=[beppo(p,t,0) for t in X]
+#X=linspace(0,200,201)
+#Y=[beppo(p,t,0) for t in X]
 
 
 
-def f(x):
-    return 2*(x**3)-7*(x**2)+3*x +1
+#def f(x):
+#    return 2*(x**3)-7*(x**2)+3*x +1
 
-Y2=[f(t) for t in X]
-plot(X,Y,'rx',X,Y2,'b+')
-show()
+#Y2=[f(t) for t in X]
+#plot(X,Y,'rx',X,Y2,'b+')
+#show()
+
+
+
+
+def fibo(n):
+    """ suite de fibonacci par recursivité"""
+    if n==0 or n==1 : 
+        return 1
+    return fibo(n-1)+fibo(n-2)
+
+#print(f(30))
+
+# temps de calcul : Trecursif environ alphe * phi ^n 
+def temps_rec(n):
+    """temps de calcul recursif """
+    p=3  # A ajuster : nombre de calcul
+    from time import clock
+    t0=clock()
+    for k in range (p):
+        fibo(n)
+    t1=clock()
+    return (t1-t0)/p
+from math import *
+from pylab import *
+
+def courbe_alpha():
+    """visualiser alpha"""
+    
+    x=[k for k in range(10,30)]
+    phi = (1-sqrt(5))/2
+    y=[(temps_rec(k)/(phi**k)) for k in x ]
+    plot(x,y)
+    show()
+
+
+#print(temps_rec(10))
+#courbe_alpha()
+
+
+def fiboiteratif(n):
+    """calcul iteratif de fibon"""
+    a=1
+    b=1
+    for k in range(2,n+1):
+        c=a+b
+        a=b
+        b=c
+    return b
+
+def temps_iter(n):
+    """temps de calucl itératif de fibo"""
+    p=100 # a ajuster en fonction du pc
+    from time import clock
+    t0=clock()
+    for k in range(p):
+        fiboiteratif(k)
+    t1=clock()
+    return (t1-t0)/p
+def courbe_ite():
+    """visualiser courbe"""
+    x=[k for k in range(10,500)]
+    y=[log(temps_iter(k))-log(k) for k in x]
+    plot(x,y)
+    show()
+
+courbe_ite()
