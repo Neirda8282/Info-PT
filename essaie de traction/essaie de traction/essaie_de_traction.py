@@ -72,3 +72,10 @@ def pentes(X,Y):
 
 def maxcourbe(X,Y):
     return max(X),Y[index(max(X))]
+def enlevezero(X,Y):
+    X1=X[:]
+    Y1=Y[:]
+    while X[0]<10**-3:
+        X1.remove()
+        Y1.remove()
+    return X1,Y1
