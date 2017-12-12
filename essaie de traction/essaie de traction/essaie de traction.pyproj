@@ -2,15 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>47f74737-8557-4bf5-95ff-0cdbebf1a0e9</ProjectGuid>
+    <ProjectGuid>1b2ac7b5-c23d-494e-88ee-fae40d52f421</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>csv_essaie_de_traction.py</StartupFile>
+    <StartupFile>essaie_de_traction.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>csv essaie de traction</Name>
-    <RootNamespace>csv essaie de traction</RootNamespace>
+    <Name>essaie de traction</Name>
+    <RootNamespace>essaie de traction</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,8 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="csv_essaie_de_traction.py" />
-    <Compile Include="essae de traction 2.py" />
+    <Compile Include="essaie_de_traction.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Essai1.csv" />

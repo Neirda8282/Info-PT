@@ -14,8 +14,8 @@ for ligne in ligne1:
         X1.append(float(a[0]))
         Y1.append(float(a[1]))
     k+=1
-plot(X1,Y1)
-show()
+#plot(X1,Y1)
+#show()
 f1.close()
 
 X=[(X1[k]+X1[k+1]+X1[k+2]+X1[k+3]+X1[k+4]+X1[k+5])/5 for k in range (len(X1)-6)]
@@ -27,7 +27,7 @@ while X[0]==0.0:
 
 P=[Y[k]/X[k] for k in range(len(X))]
 P2=[]
-for k in range(len(P)-3):
-    if abs((P[k]+P[k+1]+P[k+2])/3)-P[k]<10**-3:
+for k in range(len(P)-200):
+    if abs((P[k]+P[k+100]+P[k+200])/3)-P[k]<10**-3:
         P2.append(P[k])
 print(P2)
