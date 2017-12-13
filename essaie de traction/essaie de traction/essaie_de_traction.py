@@ -24,6 +24,8 @@ import csv as csv
 #plot(D,F)
 #show()
 #f1.close()
+F=['Essai1.csv','Essai2.csv','Essai3.csv','Essai4.csv']
+
 
 def données(f):
     f1=open(f,'r')
@@ -79,3 +81,48 @@ def enlevezero(X,Y):
         X1.remove()
         Y1.remove()
     return X1,Y1
+
+
+def n_donne(X,Y,R):
+    X1=X[:]
+    Y1=Y[:]
+    while X[0]<R:
+        X1.remove(X1[0])
+        Y1.remove(Y1[0])
+    x=X1[0]
+    y=Y1[0]
+    for k in range(len(X1)):
+        X1[k]=X1[k]-x
+        Y1[k]=Y1[k]-y
+    return X1,Y1
+
+def moindre_carre(X,Y):
+    E=[50000+10000*k for k in range(1,26)]
+    R=[]
+    for e in E:
+        S=0
+        for k in range(len(X)):
+            S+=(X[k]-e*Y[k])**2
+        R.append(S)
+    return R
+
+def select_données(X,Y,V):
+    k=0
+    X1=[]
+    Y1=[]
+    while X[k]<V:
+        X1.append(X[k])
+        Y1.append(Y[k])
+        k+=1
+    return X1,Y1
+
+for f in F:
+    plot(données(f))
+    show()
+
+#f='Essai1.csv'
+#eps,sigma=données(f)
+#tracer(eps,sigma)
+#eps2,sigma2=n_donne(eps,sigma,20)
+#eps3,sigma3=select_données(eps2,sigma2,max(sigma2))
+#print(moindre_carre(eps3,sigma3))
