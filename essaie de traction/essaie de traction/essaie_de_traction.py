@@ -86,7 +86,7 @@ def enlevezero(X,Y):
 def n_donne(X,Y,R):
     X1=X[:]
     Y1=Y[:]
-    while X[0]<R:
+    while Y1[0]<R:
         X1.remove(X1[0])
         Y1.remove(Y1[0])
     x=X1[0]
@@ -97,32 +97,50 @@ def n_donne(X,Y,R):
     return X1,Y1
 
 def moindre_carre(X,Y):
-    E=[50000+10000*k for k in range(1,26)]
+    E=[50000+10000*k for k in range(26)]
     R=[]
     for e in E:
         S=0
-        for k in range(len(X)):
-            S+=(X[k]-e*Y[k])**2
+        M=[]
+        for k in range(len(Y)):
+            
+            S+=(Y[k]-e*X[k])**2
+            M.append(e*X[k])
+                
         R.append(S)
+        plot(X,M,'*',X,Y,'r')
+        show()
+        
+    print('min de R',min(R),'index du min de R',R.index(min(R)))
+    print(E[R.index(min(R))])
+    Ym=[E[R.index(min(R))]*x for x in X]
+    plot(X,Y,'*')
+    show()
+    plot(X,Y,'*')
+    plot(X,Ym,'r')
+    show()
     return R
 
 def select_données(X,Y,V):
     k=0
     X1=[]
     Y1=[]
-    while X[k]<V:
+    while Y[k]<V:
         X1.append(X[k])
         Y1.append(Y[k])
         k+=1
     return X1,Y1
 
-for f in F:
-    plot(données(f))
-    show()
 
-#f='Essai1.csv'
-#eps,sigma=données(f)
-#tracer(eps,sigma)
-#eps2,sigma2=n_donne(eps,sigma,20)
-#eps3,sigma3=select_données(eps2,sigma2,max(sigma2))
-#print(moindre_carre(eps3,sigma3))
+
+f='Essai3.csv'
+eps,sigma=données(f)
+tracer(eps,sigma)
+eps2,sigma2=n_donne(eps,sigma,20)
+tracer(eps2,sigma2)
+eps3,sigma3=select_données(eps2,sigma2,max(sigma2)/3)
+tracer(eps3,sigma3)
+print(min(moindre_carre(eps3,sigma3)))
+
+
+ 
