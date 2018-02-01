@@ -4,4 +4,9 @@
     <TargetProject>4872a8ae-861a-4969-a54f-4828e8d985c2</TargetProject>
     <FriendlyName>astroide cornu</FriendlyName>
   </ProjectTarget>
+  <Reports>
+    <Report>
+      <Filename>C:\Users\adrie_000\AppData\Local\Temp\Performances_20180119.vsp</Filename>
+    </Report>
+  </Reports>
 </ProfilingTarget>
